@@ -1,8 +1,8 @@
 # CSCI-596-Final-Project
 
- Name: Krishna Sampath Mangalapalli
+ **Name:** Krishna Sampath Mangalapalli
 
- USC ID: 9852708473
+ **USC ID:** 9852708473
  
  ### Project Idea
  
@@ -11,4 +11,9 @@
  
  The dataset I am planning to use for this project is the Google's Open Images Dataset, which has about 9 million annotated images. Using such a large dataset can help us realize whether using TPU and/or parallelization can help us save a lot of time during training. 
  
- Dataset Link: https://storage.googleapis.com/openimages/web/index.html
+ **Dataset Link:** https://storage.googleapis.com/openimages/web/index.html
+ 
+ **Sample Images of the dataset:**
+ 
+ ![This is an image]()
+ 
