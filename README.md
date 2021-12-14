@@ -24,7 +24,7 @@
   
   The images below show the total time taken for 12 epochs, first and second epoch of training.
   
-  ![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/bar_plot_12_epochs.png?raw=true)
+  ![#c5f015](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/bar_plot_12_epochs.png?raw=true)
   
   ![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/bar_plot_first_epoch.png?raw=true)
   
