@@ -4,11 +4,11 @@
 
  **USC ID:** 9852708473
  
- ### Project Idea
+ ## Project Idea
  
  The main goal is to solve a machine learning classification problem using Tensorflow and Cloud TPU (using free trial) and analyze the performance of our solution on TPU vs conventional GPU. 
  
- ### Comparision of TPU vs GPU (Local and Cloud) using the Flowers Dataset
+ ## Comparision of TPU vs GPU (Local and Cloud) using the Flowers Dataset
  
  Here, I am using a dataset called flowers dataset which has images of five classes (which represent five different flower types). There are more than 4300 images in this dataset which allows us to observe interesting results for each hardware. I initially wanted to run with a much larger dataset, but loading a large dataset has used up all my credits in the Google Cloud free trail and stopped me from running larger tasks on TPU. 
  
@@ -22,7 +22,7 @@
   
   The program for running on cloud TPU is TPU_Flowers_Recognition.ipynb. Since initialization of TPU is different from GPU, we need to take additional steps for it. The flowers dataset is pre loaded in Google Cloud buckets (which is much faster than accessing google drive) which is a feature available. This code for using TPUs in Colab Notebooks can be found Google's official documentation.
   
-  The images below show the total time taken for 12 epochs, first and second epoch of training.
+  The images below show the total time taken for 12 epochs, first and second epoch of training. (Code for this is Plot_Flowers.ipynb)
   
   ![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/bar_plot_12_epochs.png?raw=true)
   
@@ -37,7 +37,7 @@
    A fair comparision of TPU would be comparing it with cloud GPU. We can observe a stark difference between their performances. Cloud GPU severely bottlenecks from loading data from google drive as opposed the fast cloud storage buckets that the TPU program uses. This can be seen clearly in the first epoch. Even for the subsequent epochs, the TPU outperforms cloud GPU, mainly due to the TPU's architecture and how it fully utilizes it's parallelism.
    
    
-  ### Video Activity Dataset and Expired Free Trial
+  ## Video Activity Dataset and Expired Free Trial
   
   Next I wanted to check the TPU's performance on the UCF 101 dataset (https://www.crcv.ucf.edu/data/UCF101.php), which has over 7 GB worth of videos of 101 different activity classes. 
   The program files for this are code_gpu.py and code_tpu.py. We also need the generator.py file to be in the same directory (this file has a class that is needed for converting videos to sequences of frames). I loaded them to a google cloud bucket but I could not execute the TPU program on cloud as I have utilized all the free credits available in the google cloud free trial. 
@@ -46,5 +46,24 @@
    
    If anyone has access to Google Cloud Services, they can try to run these files to train on the UCF101 dataset. I previously executed the GPU version of the code on a local GPU machine using tensorflow GPU. It took about 12 hours to train for 150 epochs on an NVIDIA RTX 2070 Super GPU. I also tried the same on Google Colab, which did not work well as loading such large data from google drive makes it impossible to train efficiently and also google colab logs off after 12 hours of use, which is not ideal for training large datasets. It will be interesting to see the performance of TPU for this.
 
-  
-  
+## MNIST Dataset on Cloud TPU Virtual Machine
+
+Since I could not load datasets and use them on cloud, I tried to use an existing resource, training on MNIST dataset, for which most resources are preloaded. The following images show the assignment of cloud TPU on a cloud shell to my project ID and executing a pre existing MNIST code (a copy of https://github.com/tensorflow/models/blob/master/official/vision/image_classification/mnist_main.py is preloaded in google cloud storage). 
+
+![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/mnist1.PNG?raw=true)
+![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/mnist2.PNG?raw=true)
+![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/mnist3.PNG?raw=true)
+![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/mnist4.PNG?raw=true)
+![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/mnist5.PNG?raw=true)
+
+We can see that the first epoch took 12 seconds and the next 9 epochs took 3 seconds each, which makes a total of 39 seconds for 10 epochs. Here, we are loading dataset from the code as the MNIST dataset is available in tensorflow datasets. The execution of the same on Cloud GPU (Colab) is done in 20 seconds for 10 epochs, with 11 seconds for the first epoch and 1 seond for the next 9 epochs. The plots comparing these two are shown below (code for plotting is available at Plot_MNIST.ipynb)
+
+![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/mnist_plot1.PNG?raw=true)
+![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/mnist_plot2.PNG?raw=true)
+![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/mnist_plot3.PNG?raw=true)
+
+## Conclusion
+
+What we can observe from this is that for small tasks like MNIST dataset, using cloud TPU is not ideal as the cost for setting up such a high performance environment is not worth it as we can achieve the same or better performance using simpler resources. The ideal times to use TPU is when we need a cloud resource to train models for long times and also when we need a fast cloud storage service like Google Cloud Storage's storage buckets. Usage of TPUs can be very beneficial depending on the circumstances
+
+                          ## Thank You
