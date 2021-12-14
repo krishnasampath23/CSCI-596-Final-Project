@@ -66,4 +66,4 @@ We can see that the first epoch took 12 seconds and the next 9 epochs took 3 sec
 
 What we can observe from this is that for small tasks like MNIST dataset, using cloud TPU is not ideal as the cost for setting up such a high performance environment is not worth it as we can achieve the same or better performance using simpler resources. The ideal times to use TPU is when we need a cloud resource to train models for long times and also when we need a fast cloud storage service like Google Cloud Storage's storage buckets. Usage of TPUs can be very beneficial depending on the circumstances
 
-                                                                            <b> THANK YOU </b>
+                                                                 <b> THANK YOU <\b>
