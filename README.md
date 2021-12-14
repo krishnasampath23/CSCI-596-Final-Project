@@ -24,7 +24,7 @@
   
   The images below show the total time taken for 12 epochs, first and second epoch of training.
   
-  ![#c5f015](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/bar_plot_12_epochs.png?raw=true)
+  ![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/bar_plot_12_epochs.png?raw=true)
   
   ![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/bar_plot_first_epoch.png?raw=true)
   
@@ -42,7 +42,7 @@
   Next I wanted to check the TPU's performance on the UCF 101 dataset (https://www.crcv.ucf.edu/data/UCF101.php), which has over 7 GB worth of videos of 101 different activity classes. 
   The program files for this are code_gpu.py and code_tpu.py. We also need the generator.py file to be in the same directory (this file has a class that is needed for converting videos to sequences of frames). I loaded them to a google cloud bucket but I could not execute the TPU program on cloud as I have utilized all the free credits available in the google cloud free trial. 
   
-   ![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/Cloud_Bucket.png?raw=true)
+   ![alt text](https://github.com/krishnasampath23/CSCI-596-Final-Project/blob/main/Cloud_Bucket.PNG?raw=true)
    
    If anyone has access to Google Cloud Services, they can try to run these files to train on the UCF101 dataset. I previously executed the GPU version of the code on a local GPU machine using tensorflow GPU. It took about 12 hours to train for 150 epochs on an NVIDIA RTX 2070 Super GPU. I also tried the same on Google Colab, which did not work well as loading such large data from google drive makes it impossible to train efficiently and also google colab logs off after 12 hours of use, which is not ideal for training large datasets. It will be interesting to see the performance of TPU for this.
 
